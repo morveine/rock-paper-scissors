@@ -6,6 +6,7 @@ const result = document.getElementById('result');
 const pScore = document.getElementById('player-score');
 const mScore = document.getElementById('machine-score');
 const restart = document.getElementById('restart');
+const winner = document.getElementById('winner');
 
 
 // track what choices were made by the player
@@ -18,6 +19,7 @@ paper.addEventListener('click', () => doTurn('paper'));
 const scissors = document.getElementById('scissors');
 scissors.addEventListener('click', () => doTurn('scissors'));
 
+
 // keep the score
 let playerScore = 0, machineScore = 0;
 
@@ -25,6 +27,7 @@ function updateScore() {
     pScore.textContent = playerScore;
     mScore.textContent = machineScore;
 }
+
 
 // do one turn
 function doTurn(playerChoice) {
@@ -66,7 +69,7 @@ function doTurn(playerChoice) {
         winner.textContent = 'Ouch! The machine beat you.';
         restartGame();
     } else {
-        winner.textContent = ''
+        winner.textContent = '';
     }
 }
 
@@ -77,5 +80,3 @@ function restartGame() {
     machineScore = 0;
     updateScore();
 }
-
-const winner = document.getElementById('winner');
