@@ -37,26 +37,26 @@ function doTurn(playerChoice) {
     }
     if (playerChoice == 'rock') {
         if (machineChoice == 'scissors') {
-            result.textContent = 'You win! Rock beats scissors.';
+            result.textContent = 'Rock beats scissors.';
             playerScore += 1;
         } else if (machineChoice == 'paper') {
-            result.textContent = 'You lose! Rock loses to paper.';
+            result.textContent = 'Rock loses to paper.';
             machineScore += 1;
         }
     } else if (playerChoice == 'paper') {
         if (machineChoice == 'rock') {
-            result.textContent = 'You win! Paper beats rock.';
+            result.textContent = 'Paper beats rock.';
             playerScore += 1;
         } else if (machineChoice == 'scissors') {
-            result.textContent = 'You lose! Paper loses to scissors.';
+            result.textContent = 'Paper loses to scissors.';
             machineScore += 1;
         }
     } else if (playerChoice == 'scissors') {
         if (machineChoice == 'paper') {
-            result.textContent = 'You win! Scissors beat paper.';
+            result.textContent = 'Scissors beat paper.';
             playerScore += 1;
         } else if (machineChoice == 'rock') {
-            result.textContent = 'You lose! Scissors lose to rock.';
+            result.textContent = 'Scissors lose to rock.';
             machineScore += 1;
         }
     }
