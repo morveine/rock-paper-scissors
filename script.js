@@ -12,7 +12,9 @@ const machineChoiceImg = document.getElementById('machine-choice-img');
 const rockSource = 'img/right-facing-fist-svgrepo-com.svg'
 const paperSource = 'img/raised-hand-svgrepo-com.svg';
 const scissorsSource = 'img/victory-hand-svgrepo-com.svg'
-
+const restartWindow = document.getElementById('restart-container')
+const finalPScore = document.getElementById('player-score-final');
+const finalMScore = document.getElementById('machine-score-final');
 
 // track what choices were made by the player
 const rock = document.getElementById('rock');
@@ -31,12 +33,30 @@ let playerScore = 0, machineScore = 0;
 function updateScore() {
     pScore.textContent = playerScore;
     mScore.textContent = machineScore;
+    finalPScore.textContent = playerScore;
+    finalMScore.textContent = machineScore;
 }
+
+// restart the game
+
+function restartGame() {
+    restartWindow.classList.add('fadeout');
+    setTimeout(() => {
+        restartWindow.classList.remove('fadeout')
+        restartWindow.style.display = 'none';
+    }, 1000);
+    playerScore = 0;
+    machineScore = 0;
+    updateScore();
+}
+
+restart.addEventListener('click', () => restartGame());
 
 
 // do one turn
 function doTurn(playerChoice) {
     const machineChoice = choices[Math.floor(Math.random() * choices.length)];
+
     if (playerChoice == 'rock') {
         playerChoiceImg.src = rockSource;
         if (machineChoice == 'scissors') {
@@ -77,21 +97,12 @@ function doTurn(playerChoice) {
     }
     updateScore()
 
-    if (playerScore == 5) { // when changing to > 5, it lets you do one more turn (so the score is 5-5) before restart
+    if (playerScore == 5) {
         winner.textContent = 'Congrats! You beat the machine.';
-        restartGame();
+        restartWindow.style.display = 'flex';
     } else if (machineScore == 5) {
         winner.textContent = 'Ouch! The machine beat you.';
-        restartGame();
-    } else {
-        winner.textContent = '';
+        restartWindow.style.display = 'flex';
     }
 }
 
-restart.addEventListener('click', () => restartGame());
-
-function restartGame() {
-    playerScore = 0;
-    machineScore = 0;
-    updateScore();
-}
