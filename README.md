@@ -14,7 +14,7 @@ Done while learning in **The Odin Project!**
 
 ## 8-04-2023 — 10-04-2023
 
-* How to work with <img> tags to make the page responsive.
+* How to work with `<img>` tags to make the page responsive.
 * How `@keyframes` work.
 * The use of `setTimeout` in code.
 
