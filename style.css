@@ -1,0 +1,164 @@
+/* reset */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* variables */
+
+:root {
+    --main-font-weight: 200;
+    --main-color: #fff;
+}
+
+/* style */
+
+html {
+    background: #493240;
+}
+
+body {
+    background: #f05793;
+    background: -webkit-linear-gradient(to bottom, #f05793, #493240);
+    background: linear-gradient(to bottom, #f05793, #493240);
+    min-height: 100vh;
+    font-family: 'Raleway', sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+main {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.container,
+.game-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+h1,
+h2 {
+    font-size: 4rem;
+    font-weight: var(--main-font-weight);
+    color: var(--main-color);
+    margin: 30px;
+}
+
+#score,
+#result,
+.choice-icons,
+#final-score {
+    color: var(--main-color);
+    font-size: 2.5rem;
+    font-weight: var(--main-font-weight);
+    margin: 25px;
+}
+
+#score {
+    margin: 0;
+}
+
+.choice-icons {
+    display: flex;
+    align-items: center;
+}
+
+.buttons {
+    display: flex;
+    gap: 20px;
+}
+
+.buttons>button,
+#restart {
+    color: var(--main-color);
+    background-color: transparent;
+    font-size: 20px;
+    border-radius: 10px;
+    border: 2px solid white;
+    transition: 0.3s ease-in-out;
+    cursor: pointer;
+    width: 150px;
+    font-family: inherit;
+    font-weight: 600;
+}
+
+.buttons>button {
+    padding: 15px;
+    text-align: center;
+}
+
+.buttons>button:hover,
+#restart:hover {
+    background-color: var(--main-color);
+    color: #f05793;
+}
+
+footer {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    margin-bottom: 10px;
+    line-height: 10px;
+}
+
+a,
+a:visited {
+    color: var(--main-color);
+    text-decoration: none;
+    font-weight: 600;
+    transition: 0.5s ease-in-out;
+}
+
+#restart-container {
+    display: none;
+    position: fixed;
+    inset: 0;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #5858587d;
+    backdrop-filter: blur(7px);
+    animation: fade-in 1s;
+}
+
+#restart {
+    padding: 5px 25px;
+    display: inline-flex;
+    align-items: center;
+    font-weight: var(--main-font-weight);
+    line-height: 1;
+}
+
+.fadeout {
+    animation: fade-out 1s !important;
+}
+
+@keyframes fade-in {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes fade-out {
+    0% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
