@@ -17,8 +17,10 @@ Done while learning in **The Odin Project!**
 * How to work with `<img>` tags to make the page responsive.
 * How `@keyframes` work.
 * The use of `setTimeout` in code.
+* How to make git branches, manage and merge them. 
 
 ### What got better: 
 
 * My understanding of how JS works with HTML
 * My skill of writing HTML and CSS that will be easier to manipulate later
+
