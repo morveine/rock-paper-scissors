@@ -47,6 +47,9 @@ function restartGame() {
     }, 1000);
     playerScore = 0;
     machineScore = 0;
+    result.textContent = 'Click on a button below to start.';
+    playerChoiceImg.src='img/white-question-mark-svgrepo-com.svg';
+    machineChoiceImg.src='img/white-question-mark-svgrepo-com.svg';
     updateScore();
 }
 
