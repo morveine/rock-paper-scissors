@@ -6,6 +6,12 @@
     padding: 0;
 }
 
+/* variables */
+
+:root {
+    --main-font-weight: 200;
+}
+
 /* style */
 
 html {
@@ -38,26 +44,33 @@ main {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 20px;
 }
 
-h1, h2 {
+h1,
+h2 {
     font-size: 4rem;
-    font-weight: 800;
+    font-weight: var(--main-font-weight);
     color: #ffdbf7;
     margin: 30px;
 }
 
 #score,
-#result, .choice-icons, #final-score {
+#result,
+.choice-icons,
+#final-score {
     color: white;
     font-size: 2.5rem;
-    font-weight: 600;
-    margin: 40px;
+    font-weight: var(--main-font-weight);
+    margin: 25px;
 }
 
-#result {
-    font-weight: 300;
+#score {
+    margin: 0;
+}
+
+.choice-icons {
+    display: flex;
+    align-items: center;
 }
 
 .buttons {
@@ -65,20 +78,25 @@ h1, h2 {
     gap: 20px;
 }
 
-.buttons>button {
-    padding: 15px;
-    width: 150px;
+.buttons>button,
+#restart {
     color: white;
     background-color: transparent;
     font-size: 20px;
-    text-align: center;
     border-radius: 10px;
     border: 2px solid white;
     transition: 0.3s ease-in-out;
     cursor: pointer;
+    width: 150px;
 }
 
-.buttons>button:hover {
+.buttons>button {
+    padding: 15px;
+    text-align: center;
+}
+
+.buttons>button:hover,
+#restart:hover {
     background-color: #ffffff;
     color: #f05793;
 }
@@ -91,22 +109,18 @@ footer {
     line-height: 10px;
 }
 
-a, a:visited {
+a,
+a:visited {
     color: white;
     text-decoration: none;
-    font-weight: 400;
-    transition: 0.2s ease-in-out;
-}
-
-a:hover {
-    font-weight: 800;
+    font-weight: 600;
+    transition: 0.5s ease-in-out;
 }
 
 .restart-container {
     display: none;
     position: fixed;
     inset: 0;
-    /* display: flex; */
     flex-direction: column;
     justify-content: center;
     background-color: #5858587d;
@@ -115,21 +129,12 @@ a:hover {
 
 #restart {
     padding: 5px 25px;
-    color: white;
-    background-color: transparent;
-    font-size: 20px;
-    border-radius: 10px;
-    border: 2px solid white;
-    transition: 0.3s ease-in-out;
-    cursor: pointer;
     display: inline-flex;
     align-items: center;
-    font-weight: 800;
+    font-weight: var(--main-font-weight);
     line-height: 1;
 }
 
-
-#restart:hover {
-    background-color: #ffffff;
-    color: #f05793;
+.visible {
+    display: flex;
 }
