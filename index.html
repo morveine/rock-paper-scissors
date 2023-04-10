@@ -14,24 +14,42 @@
 <body>
   <main>
     <div class="container">
+
       <h1>Let's play a game!</h1>
+
       <div class="game-container">
+
         <p id="score"><span id="player-score">0</span> — <span id="machine-score">0</span></p>
+
         <div class="choice-icons">
-          <p id="choice"><span id="player-choice"></span> — <span id="machine-choice"></span></p>
+
+          <img id="player-choice-img" src="img/white-question-mark-svgrepo-com.svg" height="200px" alt="">
+
+          <p>—</p>
+
+          <img id="machine-choice-img" src="img/white-question-mark-svgrepo-com.svg" height="200px" alt="">
+
         </div>
-        <p id="result"></p>
+
+        <p id="result">Click on a button below to start.</p>
+
         <div class="buttons">
           <button id="rock">Rock</button>
           <button id="paper">Paper</button>
           <button id="scissors">Scissors</button>
         </div>
+
       </div>
+
     </div>
+
     <div class="restart-container">
       <div class="restart-wrapper">
-        <h2 id="winner">Ouch! The machine beat you.</h2>
-        <p id="final-score"><span id="player-score">0</span> — <span id="machine-score">0</span></p>
+
+        <h2 id="winner"></h2>
+
+        <p id="final-score"><span id="player-score-final">0</span> — <span id="machine-score-final">0</span></p>
+
         <button id="restart">
           <svg fill='currentColor' height="40px" viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg">
             <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
@@ -44,11 +62,13 @@
             </g>
           </svg>
           Restart</button>
+
       </div>
     </div>
   </main>
   <footer>
     <div class="credentials">
+
       <svg height="25px" viewBox="0 0 20 20" version="1.1" xmlns="http://www.w3.org/2000/svg"
         xmlns:xlink="http://www.w3.org/1999/xlink" fill="#ffffff">
         <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
@@ -68,8 +88,11 @@
           </g>
         </g>
       </svg>
+
     </div>
+
     <a href="https://github.com/morveine">morveine</a>
+
   </footer>
   <script src="script.js"></script>
 </body>
