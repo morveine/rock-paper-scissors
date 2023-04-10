@@ -10,6 +10,7 @@
 
 :root {
     --main-font-weight: 200;
+    --main-color: #fff;
 }
 
 /* style */
@@ -27,7 +28,6 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
     text-align: center;
 }
 
@@ -50,7 +50,7 @@ h1,
 h2 {
     font-size: 4rem;
     font-weight: var(--main-font-weight);
-    color: #ffdbf7;
+    color: var(--main-color);
     margin: 30px;
 }
 
@@ -58,7 +58,7 @@ h2 {
 #result,
 .choice-icons,
 #final-score {
-    color: white;
+    color: var(--main-color);
     font-size: 2.5rem;
     font-weight: var(--main-font-weight);
     margin: 25px;
@@ -80,7 +80,7 @@ h2 {
 
 .buttons>button,
 #restart {
-    color: white;
+    color: var(--main-color);
     background-color: transparent;
     font-size: 20px;
     border-radius: 10px;
@@ -88,6 +88,8 @@ h2 {
     transition: 0.3s ease-in-out;
     cursor: pointer;
     width: 150px;
+    font-family: inherit;
+    font-weight: 600;
 }
 
 .buttons>button {
@@ -97,7 +99,7 @@ h2 {
 
 .buttons>button:hover,
 #restart:hover {
-    background-color: #ffffff;
+    background-color: var(--main-color);
     color: #f05793;
 }
 
@@ -111,20 +113,22 @@ footer {
 
 a,
 a:visited {
-    color: white;
+    color: var(--main-color);
     text-decoration: none;
     font-weight: 600;
     transition: 0.5s ease-in-out;
 }
 
-.restart-container {
+#restart-container {
     display: none;
     position: fixed;
     inset: 0;
     flex-direction: column;
     justify-content: center;
+    align-items: center;
     background-color: #5858587d;
     backdrop-filter: blur(7px);
+    animation: fade-in 1s;
 }
 
 #restart {
@@ -135,6 +139,26 @@ a:visited {
     line-height: 1;
 }
 
-.visible {
-    display: flex;
+.fadeout {
+    animation: fade-out 1s !important;
+}
+
+@keyframes fade-in {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes fade-out {
+    0% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
 }
